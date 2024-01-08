@@ -27,28 +27,36 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Updated: Nov 17 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
-<body>
+<style>
+  .img-fluid.rounded-circle {
+    border-radius: 10%;
+    border: 2px solid #3498db; /* Blue border */
+    box-shadow: 0 0 10px #FDEA9E; /* Golden Glow */
+    padding: 5px; /* Some padding */
+    width: 210px; /* Specify a width */
+    height: 156px; /* Specify a height */
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  </style>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
+  <body>
 
-      <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Immanuel Septianta Sitepu</a></h1>
-        <div class="social-links mt-3 text-center">
+    <!-- ======= Mobile nav toggle button ======= -->
+
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+    <!-- ======= Header ======= -->
+
+    <header id="header">
+      <div class="d-flex flex-column">
+
+        <div class="profile">
+          <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+
+          <h1 class="text-light"><a href="index.html">Immanuel Septianta Sitepu</a></h1>
+
+          <div class="social-links mt-3 text-center">
 
           <!--<a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
             <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>-->
@@ -73,9 +81,14 @@
             <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
             <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
           </ul>
-        </nav><!-- .nav-menu -->
+        </nav>
+
+        <!-- .nav-menu -->
+
       </div>
-    </header><!-- End Header -->
+    </header>
+
+    <!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
@@ -114,9 +127,52 @@
 
         <div class="row" style="text-align: justify;">
 
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+          <!-- IMAGE STYLE! -->
+
+          <div class="col-lg-4" data-aos="fade-right" style="display: flex; justify-content: flex-start; align-items: center;">
+            <img id="glowingImage" src="assets/img/profile-img.jpg"class="img-fluid" alt="" style="width: 100%; height: auto;">
           </div>
+
+          <style>
+            .col-lg-4 {
+              width: 219px;
+              height: 307px;
+              border-radius: 15px;
+              overflow: hidden;
+              box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+            }
+            .col-lg-4:hover {
+              transform: scale(1.05);
+            }
+            .img-fluid {
+              transition: all 0.3s ease-in-out;
+            }
+          </style>
+
+          <script>
+            
+            function getRandomColor() {
+              var letters = '0123456789ABCDEF';
+              var color = '#';
+              for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+              }
+              return color;
+            }
+
+            window.onload = function() {
+              var img = document.getElementById('glowingImage');
+              var color = getRandomColor();
+              img.style.boxShadow = `0 0 10px ${color}, 0 0 20px ${color}, 0 0 30px ${color}, 0 0 40px ${color}`;
+            };
+          </script>
+
+          <!--<div class="col-lg-4" data-aos="fade-right">
+            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+          </div>-->
+
+          <!-- END OF IMAGE STYLE! -->
+          
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>IT Support Infrastructure Assets &amp; UAT.</h3>
             <p class="fst-italic">
@@ -147,6 +203,110 @@
               </div>
             </div>
           </section>
+
+          <!-- Start of Experience Section -->
+          
+          <style>
+            @keyframes fadeIn {
+              0% {opacity: 0;}
+              100% {opacity: 1;}
+            }
+
+            @keyframes slideIn {
+              0% {transform: translateY(50px);}
+              100% {transform: translateY(0);}
+            }
+
+            .resume-item {
+              margin-bottom: 1.5rem;
+              padding: 1rem;
+              border-radius: 0.3rem;
+              background-color: #f8f9fa;
+              box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+              animation: fadeIn 2s, slideIn 2s;
+            }
+
+            .resume-title {
+              font-size: 1.5rem;
+              font-weight: 700;
+              color: #007bff;
+              margin-top: 1rem;
+              margin-bottom: 1rem;
+            }
+          </style>
+
+          <section id="experience" class="py-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <h2 class="resume-title">Experience 1</h2>
+                  <div class="resume-item">
+                    <h4>Job Title</h4>
+                    <h5>Start Year - End Year</h5>
+                    <p><em>Company Name, Location</em></p>
+                    <ul>
+                      <li>Responsibility or Achievement 1</li>
+                      <li>Responsibility or Achievement 2</li>
+                      <li>Responsibility or Achievement 3</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Start of Experience Section 2 -->
+
+          <style>
+            @keyframes fadeIn {
+              0% {opacity: 0;}
+              100% {opacity: 1;}
+            }
+
+            @keyframes slideIn {
+              0% {transform: translateY(50px);}
+              100% {transform: translateY(0);}
+            }
+
+            .resume-item {
+              margin-bottom: 1.5rem;
+              padding: 1rem;
+              border-radius: 0.3rem;
+              background-color: #f8f9fa;
+              box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+              animation: fadeIn 2s, slideIn 2s;
+            }
+
+            .resume-title {
+              font-size: 1.5rem;
+              font-weight: 700;
+              color: #007bff;
+              margin-top: 1rem;
+              margin-bottom: 1rem;
+            }
+          </style>
+
+          <section id="experience" class="py-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <h2 class="resume-title">Experience 2</h2>
+                  <div class="resume-item">
+                    <h4>Job Title</h4>
+                    <h5>Start Year - End Year</h5>
+                    <p><em>Company Name, Location</em></p>
+                    <ul>
+                      <li>Responsibility or Achievement 1</li>
+                      <li>Responsibility or Achievement 2</li>
+                      <li>Responsibility or Achievement 3</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- End of Experience Section -->
 
           <!-- End About Section -->
 
@@ -205,12 +365,13 @@
 
         <div class="section-title">
           <h2>Skills</h2>
-          <p>Throughout the course of my studies, I have acquired several valuable skills such as: </p>
+          <p>During the progression of my academic journey, I have cultivated numerous invaluable competencies such as: </p>
         </div>
 
         <div class="row skills-content">
 
           <!-- Section 1 -->
+
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
 
             <div class="progress">
@@ -392,10 +553,10 @@
         </div>
       </section>
 
-    <!-- End Skills Section -->
+      <!-- End Skills Section -->
 
-    <!-- ======= Resume Section ======= -->
-    
+      <!-- ======= Resume Section ======= -->
+
     <!-- <section id="resume" class="resume">
       <div class="container">
 
@@ -463,7 +624,7 @@
 
     <-- End Resume Section -->
 
-    <!-- ======= Portfolio Section ======= -->
+      <!-- ======= Portfolio Section ======= -->
 
     <!-- <section id="portfolio" class="portfolio section-bg">
       <div class="container">
